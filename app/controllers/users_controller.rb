@@ -18,7 +18,12 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    if params[:ride_id]
+      @ride = Ride.find(params[:ride_id])
+      @ride_message = @ride.take_ride
+    end
+  end
 
 private
 

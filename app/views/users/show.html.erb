@@ -1,5 +1,13 @@
 <h1><%= @user.name %></h1>
 
+<% unless @ride.nil? %>
+  <% if @ride_message == true %>
+    <p>Thanks for riding the <%= @ride.attraction.name %>!</p>
+  <% else %>
+    <p><%= @ride_message %></p>
+  <% end %>
+<% end %>
+
 <% if @user.admin %>
   <p>ADMIN</p>
 <% end %>
@@ -8,5 +16,7 @@
 <p>Happiness: <%= @user.happiness %></p>
 <p>Tickets: <%= @user.tickets %></p>
 <p>Height: <%= @user.height %> inches</p> <br><br>
+
+<%= link_to "See attractions", attractions_path %><br><br>
 
 <%= link_to "Log Out", logout_path, method: "post" %>

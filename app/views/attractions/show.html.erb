@@ -1,0 +1,6 @@
+<h1><%= @attraction.name %></h1><br><br>
+
+<%= form_for @ride do |form| %>
+  <%= form.hidden_field :attraction_id, value: @attraction.id %>
+  <%= form.submit "Go on this ride" %>
+<% end %>
