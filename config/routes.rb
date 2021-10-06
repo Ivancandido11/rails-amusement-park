@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "users#new"
   get "/signin", to: "sessions#new"
   post "/login", to: "sessions#create"
+  post "/logout", to: "sessions#destroy"
 end
