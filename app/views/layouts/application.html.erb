@@ -18,6 +18,8 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+        <a class="navbar-brand" href="/signin"/>Login</a>
+        <a class="navbar-brand" href="/attractions"/>Attractions</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -29,6 +31,9 @@
 
     <!-- content -->
     <div class="container"  role="main">
+      <% if session[:user_id] %>
+        <p><%= link_to "Log Out", logout_path, method: "post" %></p>
+      <% end %>
       <%= yield %>
     </div>
   </body>

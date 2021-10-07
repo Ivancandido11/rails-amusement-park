@@ -1,0 +1,20 @@
+<div>
+  <%= form_for attraction do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %><br><br>
+
+    <%= form.label :nausea_rating %>
+    <%= form.number_field :nausea_rating %><br><br>
+
+    <%= form.label :happiness_rating %>
+    <%= form.number_field :happiness_rating %><br><br>
+
+    <%= form.label :tickets %>
+    <%= form.number_field :tickets %><br><br>
+
+    <%= form.label :min_height %>
+    <%= form.number_field :min_height %><br><br>
+
+    <%= form.submit %>
+  <% end %>
+</div>

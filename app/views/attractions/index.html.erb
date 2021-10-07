@@ -3,7 +3,13 @@
 <div>
   <ul>
     <% @attractions.each do |attraction| %>
-      <p><%= link_to "Go on #{attraction.name}", attraction %></p>
+      <% if admin? %>
+        <p><%= link_to "Show #{attraction.name}", attraction %></p>
+      <% else %>
+        <p><%= link_to "Go on #{attraction.name}", attraction %></p>
+      <% end %>
     <% end %>
   </ul>
-<div>
+<div><br><br>
+
+<%= link_to "New Attraction", new_attraction_path %>
